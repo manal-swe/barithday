@@ -7,10 +7,7 @@
     <title>Message for you</title>
 
     <style>
-        /* =========================
-           ORIGINAL index.html STYLE
-           ========================= */
-
+       
         * {
             margin: 0;
             padding: 0;
@@ -77,11 +74,6 @@
             color: #bd799b;
         }
 
-
-        /* =========================
-           PAGE SWITCHING
-           ========================= */
-
         .first-page {
             display: flex;
             width: 80%;
@@ -108,11 +100,6 @@
         .first-page.hidden {
             display: none;
         }
-
-
-        /* =========================
-           ORIGINAL yes.html STYLE
-           ========================= */
 
         .container {
             text-align: center;
@@ -180,9 +167,6 @@
 
 <body>
 
-    <!-- =========================
-         MUSIC
-         ========================= -->
 
     <audio id="birthdayAudio" autoplay loop>
         <source src="birthdaysong.mp3" type="audio/mpeg" />
@@ -190,9 +174,7 @@
     </audio>
 
 
-    <!-- =========================
-         FIRST PAGE
-         ========================= -->
+    <!-- FIRST PAGE-->
 
     <div class="first-page" id="firstPage">
 
@@ -200,7 +182,7 @@
 
             <h2 class="question">happpppy birthdaaaaay Raghad</h2>
 
-            <img src="C:\Users\manal\OneDrive - University of Ha'il\سطح المكتب\web\hapyy.png" alt="" class="gif" />
+            <img src="hapyy.png" alt="" class="gif" />
 
             <div class="btn-group">
 
@@ -223,9 +205,7 @@
     </div>
 
 
-    <!-- =========================
-         SECOND PAGE - ORIGINAL yes.html
-         ========================= -->
+    <!--SECOND PAGE - ORIGINAL yes.html -->
 
     <div class="yes-page" id="yesPage">
 
@@ -256,13 +236,10 @@
     </div>
 
 
-    <!-- =========================
-         ORIGINAL script.js + PAGE NAVIGATION
-         ========================= -->
-
+   
     <script>
 
-        /* Original script.js */
+       
 
         const wrapper = document.querySelector('.wrapper');
         const gif = document.querySelector('.gif');
@@ -284,9 +261,7 @@
         });
 
 
-        /* =========================
-           YES BUTTON
-           ========================= */
+        /* YES BUTTON */
 
         const firstPage = document.getElementById('firstPage');
         const yesPage = document.getElementById('yesPage');
@@ -302,10 +277,7 @@
             firstPage.classList.add('hidden');
             yesPage.classList.add('active');
 
-            /*
-             * The click counts as user interaction,
-             * so try to start the music if autoplay was blocked.
-             */
+            
             birthdayAudio.play().catch(() => {});
 
         });
