@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Message for you</title>
+
+    <style>
+        /* =========================
+           ORIGINAL index.html STYLE
+           ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f3e8d0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .gif {
+            height: 100%;
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.5em;
+            color: #ba5b8b;
+            margin: 15px 0;
+        }
+
+        .btn-group {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        button {
+            position: absolute;
+            width: 150px;
+            height: inherit;
+            color: white;
+            font-size: 1.2em;
+            border-radius: 30px;
+            outline: none;
+            cursor: pointer;
+            box-shadow: 0 2px 4px gray;
+            border: 2px solid #bd799b;
+        }
+        button:nth-child(1) {
+            margin-left: -200px;
+            background: #bd799b;
+        }
+
+        button:nth-child(2) {
+            margin-right: -200px;
+            background: rgb(255, 255, 255);
+            color: #bd799b;
+        }
+
+
+        /* =========================
+           PAGE SWITCHING
+           ========================= */
+
+        .first-page {
+            display: flex;
+            width: 80%;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .yes-page {
+            display: none;
+            width: 100%;
+            min-height: 100vh;
+            background: #ffd6f0;
+            background-size: cover;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .yes-page.active {
+            display: flex;
+        }
+
+        .first-page.hidden {
+            display: none;
+        }
+
+
+        /* =========================
+           ORIGINAL yes.html STYLE
+           ========================= */
+
+        .container {
+            text-align: center;
+            width: 100%;
+        }
+
+        .image-box {
+            display: inline-block;
+            width: 80%;
+            max-width: 200px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .image-box img {
+            width: 100%;
+            display: block;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ba7296;
+            margin: 20px 0;
+            text-align: center;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .message {
+            font-size: 16px;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            line-height: 1.6;
+            max-width: 90%;
+            margin: 0 auto 20px auto;
+        }
+
+        .message p {
+            margin: 10px 0;
+        }
+
+        .next-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ba7296;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .next-button:hover {
+            background-color: #ba7296;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         MUSIC
+         ========================= -->
+
+    <audio id="birthdayAudio" autoplay loop>
+        <source src="birthdaysong.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+    </audio>
+
+
+    <!-- =========================
+         FIRST PAGE
+         ========================= -->
+
+    <div class="first-page" id="firstPage">
+
+        <div class="wrapper">
+
+            <h2 class="question">happpppy birthdaaaaay Raghad</h2>
+
+            <img src="C:\Users\manal\OneDrive - University of Ha'il\سطح المكتب\web\hapyy.png" alt="" class="gif" />
+
+            <div class="btn-group">
+
+                <button id="yesBtn">
+                    <a
+                        href="#"
+                        class="yes-btn"
+                        style="color: inherit; text-decoration: none;"
+                    >
+                        yes
+                    </a>
+                </button>
+
+                <button class="no-btn">No</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         SECOND PAGE - ORIGINAL yes.html
+         ========================= -->
+
+    <div class="yes-page" id="yesPage">
+
+        <div class="container">
+
+            <div class="image-box">
+                <img src="yes.jpeg" alt="" />
+            </div>
+
+            <div class="title">happy birthday</div>
+
+            <div class="message">
+
+                <p>wishing you a day filled with happiness and a year filled with joy, happy birthday.</p>
+
+                <p>to the frind who makes every moment memorable may your day be as extraordinary as you are></p>
+
+                <p>happy birthday all the lovee and success in the universe></p>
+
+            </div>
+
+            <a href="#" class="next-button" id="returnBtn">
+                Return
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         ORIGINAL script.js + PAGE NAVIGATION
+         ========================= -->
+
+    <script>
+
+        /* Original script.js */
+
+        const wrapper = document.querySelector('.wrapper');
+        const gif = document.querySelector('.gif');
+        const noBtn = document.querySelector('.no-btn');
+
+        noBtn.addEventListener('mouseover', () => {
+
+            const noBtnRect = noBtn.getBoundingClientRect();
+
+            const maxX = window.innerWidth - noBtnRect.width;
+            const maxY = window.innerHeight - noBtnRect.height;
+
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+
+        });
+
+
+        /* =========================
+           YES BUTTON
+           ========================= */
+
+        const firstPage = document.getElementById('firstPage');
+        const yesPage = document.getElementById('yesPage');
+        const yesBtn = document.getElementById('yesBtn');
+        const returnBtn = document.getElementById('returnBtn');
+        const birthdayAudio = document.getElementById('birthdayAudio');
+
+
+        yesBtn.addEventListener('click', (event) => {
+
+            event.preventDefault();
+
+            firstPage.classList.add('hidden');
+            yesPage.classList.add('active');
+
+            /*
+             * The click counts as user interaction,
+             * so try to start the music if autoplay was blocked.
+             */
+            birthdayAudio.play().catch(() => {});
+
+        });
+
+
+        /* =========================
+           RETURN BUTTON
+           ========================= */
+
+        returnBtn.addEventListener('click', (event) => {
+
+            event.preventDefault();
+
+            yesPage.classList.remove('active');
+            firstPage.classList.remove('hidden');
+
+        });
+
+    </script>
+
+</body>
+</html>
